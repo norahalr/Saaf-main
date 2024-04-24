@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="208dp"
+        android:layout_height="199dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/saaf" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="397dp"
+        android:layout_height="473dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/rdis"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Logo">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="717dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:text="Select your preferred branch"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/Riyadh"
+            android:layout_width="77dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="32dp"
+            android:text="Riyadh"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageR"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/Rate"
+            android:layout_width="144dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="93dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/Riyadh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/disc"
+            app:srcCompat="@drawable/rating" />
+
+        <TextView
+            android:id="@+id/disc"
+            android:layout_width="232dp"
+            android:layout_height="106dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="4dp"
+            android:text="In Riyadh, hotels offer diverse amenities for all budgets and preferences, catering to both business and leisure travelers with local hospitality."
+            app:layout_constraintBottom_toTopOf="@+id/Rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ImageR"
+            app:layout_constraintTop_toBottomOf="@+id/Title"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <ImageView
+            android:id="@+id/ImageR"
+            android:layout_width="116dp"
+            android:layout_height="167dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/ImageK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Title"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/riyadh" />
+
+        <ImageView
+            android:id="@+id/ImageK"
+            android:layout_width="131dp"
+            android:layout_height="166dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/Khobar"
+            app:layout_constraintEnd_toStartOf="@+id/DiscK"
+            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Riyadh"
+            app:srcCompat="@drawable/khobar" />
+
+        <TextView
+            android:id="@+id/Khobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginEnd="12dp"
+            android:text="Khobar"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Rate2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageK" />
+
+        <TextView
+            android:id="@+id/DiscK"
+            android:layout_width="239dp"
+            android:layout_height="115dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="2dp"
+            android:text="In Khobar, hotels offer amenities for all budgets and preferences, welcoming both business and leisure travelers for a comfortable stay in this vibrant city."
+            app:layout_constraintBottom_toTopOf="@+id/SelectK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ImageK"
+            app:layout_constraintTop_toBottomOf="@+id/Rate" />
+
+        <ImageView
+            android:id="@+id/Rate2"
+            android:layout_width="144dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DiscK"
+            app:srcCompat="@drawable/rating" />
+
+        <Button
+            android:id="@+id/SelectR"
+            android:layout_width="114dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="48dp"
+            android:background="#dbcfa7"
+            android:text="Select"
+            app:layout_constraintBottom_toTopOf="@+id/DiscK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disc" />
+
+        <Button
+            android:id="@+id/SelectK"
+            android:layout_width="114dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="2dp"
+            android:background="#dbcfa7"
+            android:text="Select"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DiscK" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="0dp"
+        android:background="#dbcfa7"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <ImageView
+            android:id="@+id/logoutBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/signout" />
+
+        <ImageView
+            android:id="@+id/homeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/profileBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/prof" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Login" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Add this line to prevent background color override -->
+        <item name="android:colorButtonNormal">#dbcfa7</item>
+    </style>
+
+    <style name="Theme.Login" parent="Base.Theme.Login" />
+</resources>

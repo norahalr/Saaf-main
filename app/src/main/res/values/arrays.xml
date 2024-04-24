@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="action_options">
+        <item>Park Car</item>
+        <item>Retrieve Car</item>
+    </string-array>
+</resources>
