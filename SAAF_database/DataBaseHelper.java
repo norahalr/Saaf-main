@@ -55,14 +55,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SERVICE_DATE = "ServiceDate";
     public static final String COLUMN_SERVICE_COST = "ServiceCost";
 
-    // Payments table
-    public static final String TABLE_PAYMENTS = "Payments";
-    public static final String COLUMN_PAYMENT_ID = "PaymentID";
-    public static final String COLUMN_PAYMENT_RESERVATION_ID = "ReservationID";
-    public static final String COLUMN_PAYMENT_DATE = "PaymentDate";
-    public static final String COLUMN_PAYMENT_METHOD = "PaymentMethod";
-    public static final String COLUMN_PAYMENT_AMOUNT_PAID = "AmountPaid";
-
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -115,16 +107,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 COLUMN_SERVICE_COST + " REAL, " +
                 "FOREIGN KEY(" + COLUMN_SERVICE_RESERVATION_ID + ") REFERENCES " + TABLE_RESERVATIONS + "(" + COLUMN_RESERVATION_ID + "))";
         db.execSQL(createRoomServicesTable);
-
-        // Create Payments table
-        String createPaymentsTable = "CREATE TABLE " + TABLE_PAYMENTS + " (" +
-                COLUMN_PAYMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_PAYMENT_RESERVATION_ID + " INTEGER, " +
-                COLUMN_PAYMENT_DATE + " TEXT, " +
-                COLUMN_PAYMENT_METHOD + " TEXT, " +
-                COLUMN_PAYMENT_AMOUNT_PAID + " REAL, " +
-                "FOREIGN KEY(" + COLUMN_PAYMENT_RESERVATION_ID + ") REFERENCES " + TABLE_RESERVATIONS + "(" + COLUMN_RESERVATION_ID + "))";
-        db.execSQL(createPaymentsTable);
     }
 
     @Override
@@ -134,7 +116,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ROOMS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESERVATIONS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ROOM_SERVICES);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PAYMENTS);
+      
 
         onCreate(db);
     }
