@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -104,6 +105,36 @@ public class Myreservation extends AppCompatActivity {
             }
         });
 
+        SearchView searchView = findViewById(R.id.searchBar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Reservations rs =  dbManager.searchForReservation(query, perfMngr.getUserID());
+                if(rs != null) {
+                    resList.clear();
+                    resList.add(rs);
+                    adapter = new reservationAdapter(resList, Myreservation.this);
+                    listView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }else{
+                    resList.clear();
+                    adapter.notifyDataSetChanged();
+                    alert.showAlertDialog(Myreservation.this, "Search Result", "Book number is not found", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }, false
+                    );
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
     }
 

@@ -309,4 +309,34 @@ public class DBManager {
         return userObj;
     }
 
+    public Reservations searchForReservation(String bookId, int userID) {
+
+        String sql = "select * from "+ DBHelper.TABLE_RESERVATIONS +  " where "
+                +DBHelper.COLUMN_RESERVATION_ID+" ='"+bookId+"'  and "
+                +DBHelper.COLUMN_RESERVATION_USER_ID+" ='"+userID+"' "
+                ;
+
+        Cursor res = database.rawQuery( sql, null );
+        res.moveToFirst();
+        Reservations book  = null;
+        while(res.isAfterLast() == false) {
+            @SuppressLint("Range") int _id = res.getInt(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_ID));
+            @SuppressLint("Range") int user_id = res.getInt(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_USER_ID));
+            @SuppressLint("Range") int roomNo = res.getInt(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_ROOM_ID));
+            @SuppressLint("Range") String checkInDate = res.getString(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_CHECK_IN_DATE));
+            @SuppressLint("Range") String checkOutDate = res.getString(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_CHECK_OUT_DATE));
+            @SuppressLint("Range") int noOfG = res.getInt(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_NUMBER_OF_GUESTS));
+            @SuppressLint("Range") double total_price = res.getDouble(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_TOTAL_PRICE));
+            @SuppressLint("Range") String _status = res.getString(res.getColumnIndex(DBHelper.COLUMN_RESERVATION_STATUS));
+            book = new Reservations(_id,user_id,
+                    roomNo,
+                    checkInDate,
+                    checkOutDate,
+                    noOfG,
+                    total_price,
+                    _status);
+            res.moveToNext();
+        }
+        return book;
+    }
 }
